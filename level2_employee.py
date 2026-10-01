@@ -1,34 +1,16 @@
-from abc import ABC, abstractmethod
-
-class Employee(ABC):
-    @abstractmethod
-    def calculate_salary(self):
-        pass
-
-    @abstractmethod
-    def display_details(self):
-        pass
-
-class Manager(Employee):
-    def __init__(self, name, base):
+class Employee:
+    def __init__(self, name, department, salary):
         self.name = name
-        self.base = base
-    def calculate_salary(self):
-        return self.base + 1000
-    def display_details(self):
-        return f"Manager: {self.name}, Salary: {self.calculate_salary()}"
+        self.department = department
+        self.salary = salary
 
-class Developer(Employee):
-    def __init__(self, name, base):
-        self.name = name
-        self.base = base
-    def calculate_salary(self):
-        return self.base + 500
-    def display_details(self):
-        return f"Developer: {self.name}, Salary: {self.calculate_salary()}"
-
-if __name__ == "__main__":
-    m = Manager('Alice', 5000)
-    d = Developer('Bob', 4000)
-    print(m.display_details())
-    print(d.display_details())
+if __name__ == '__main__':
+    employees = [
+        Employee('E1','HR',3000),
+        Employee('E2','IT',4000),
+        Employee('E3','Sales',3500),
+        Employee('E4','Finance',3800),
+        Employee('E5','Support',2800),
+    ]
+    for e in employees:
+        print(e.name, e.department, e.salary)
