@@ -1,2 +1,2 @@
 from function_assignment_runner import run
-run(1, 6)
+run(3, 4)
